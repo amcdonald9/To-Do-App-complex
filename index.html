@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>My To-Do List ✅</h1>
+
+    <button id="toggleThemeBtn" class="theme-btn">Toggle Dark/Light Mode</button>
+
+    <form id="todoForm" autocomplete="off">
+      <input type="text" id="taskInput" placeholder="Add new task..." required />
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="todoList"></ul>
+
+    <button id="clearCompleted">Clear Completed</button>
+  </div>
+</body>
+</html>

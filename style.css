@@ -1,0 +1,231 @@
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-light: #fefefe;
+  --text-dark: #eee;
+  --text-light: #222;
+  --primary-color: #00ffff;
+  --primary-color-hover: #00cccc;
+  --danger-color: #ff6666;
+  --danger-color-hover: #cc5555;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.container {
+  background: #222;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 20px var(--primary-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light .container {
+  background: #eee;
+  color: var(--text-light);
+  box-shadow: 0 0 20px var(--primary-color);
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.theme-btn {
+  background: var(--primary-color);
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--primary-color-hover);
+}
+
+form {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+body.light input[type="text"] {
+  background: #fff;
+  color: var(--text-light);
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  border: none;
+  background: var(--primary-color);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-color-hover);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background: #333;
+  border: none;
+  color: #ccc;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary-color);
+  color: #000;
+}
+
+body.light .filter-btn {
+  background: #ddd;
+  color: var(--text-light);
+}
+
+body.light .filter-btn.active,
+body.light .filter-btn:hover {
+  background: var(--primary-color);
+  color: #000;
+}
+
+#todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todoList li {
+  background: #111;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+body.light #todoList li {
+  background: #fff;
+  color: var(--text-light);
+  box-shadow: 0 0 5px #aaa;
+}
+
+#todoList li.completed span.task-text {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.task-text {
+  flex-grow: 1;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.task-text[contenteditable="true"] {
+  border-bottom: 2px dashed var(--primary-color);
+  outline: none;
+}
+
+button.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--danger-color);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+body.light button.delete-btn {
+  color: #cc5555;
+}
+
+#clearCompleted {
+  margin-top: 15px;
+  background: var(--danger-color);
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 12px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+#clearCompleted:hover {
+  background: var(--danger-color-hover);
+}
+
+/* Animation */
+.todo-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.todo-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todo-leave {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.todo-leave-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
