@@ -17,6 +17,9 @@ An advanced to-do list web app designed to help users organize tasks, manage pri
 - CSS3 (Flexbox/Grid)
 - JavaScript (Vanilla)
 
+Link to demo: [https://amcdonald9.github.io/To-Do-App-complex/]
+
+
 ## 🚀 Getting Started
 
 To run this project locally:
